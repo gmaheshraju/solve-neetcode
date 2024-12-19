@@ -1,5 +1,6 @@
 package com.problems.basic;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -9,8 +10,8 @@ public class TopKFrequent {
 
 	public static void main(String[] args) {
 
-		int[] InputArr = { 1, 3, 4, 5, 3, 3, 4, 5, 6, 2, 3, 3, };
-		topKFrequent(InputArr, 2);
+		int[] InputArr = { 1, 1,3, 4, 5, 3, 3, 4, 5,5,5,5,5 ,6, 2, 3, 3, };
+		topKFrequent(InputArr, 3);
 	}
 
 	public static int[] topKFrequent(int[] nums, int k) {
@@ -27,7 +28,7 @@ public class TopKFrequent {
 
 		System.out.println(countMap);
 		// Min Heap data structure initialization
-		Queue<Integer> heap = new PriorityQueue<>((a, b) -> countMap.get(a) - countMap.get(b));
+		Queue<Integer> heap = new PriorityQueue<>((a, b) -> countMap.get(a) - countMap.get(b)); // Max-heap
 
 		for (int num : countMap.keySet()) {
 
@@ -41,9 +42,12 @@ public class TopKFrequent {
 
 		int[] output = new int[k];
 
-		for (int i = 0; i < k; i++) {
-			output[i] = heap.poll();
-		}
+		 for (int i = 0; i <k; i++) {
+	            output[i] = heap.poll(); // Fill the array from the end to maintain descending order
+	     }
+	
+		
+		System.out.println(Arrays.toString(output));
 
 		return output;
 	}
