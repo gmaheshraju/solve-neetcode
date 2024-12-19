@@ -28,7 +28,7 @@ public class TopKFrequent {
 
 		System.out.println(countMap);
 		// Min Heap data structure initialization
-		Queue<Integer> heap = new PriorityQueue<>((a, b) -> countMap.get(a) - countMap.get(b)); // Max-heap
+		Queue<Integer> heap = new PriorityQueue<>((num1, num2) -> countMap.get(num1) - countMap.get(num2)); // Max-heap
 
 		for (int num : countMap.keySet()) {
 
