@@ -26,7 +26,7 @@ public class EncodeDecode {
 
 			int wordLength = Integer.parseInt(s.substring(i, delimiterIndex));
 			int start = delimiterIndex + 1;
-			int end = start + wordLength;
+		    int end = start + wordLength;
 			String word = s.substring(start, end);
 			decoded.add(word);
 			i = start + wordLength;
