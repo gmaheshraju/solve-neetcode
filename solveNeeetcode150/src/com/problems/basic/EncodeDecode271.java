@@ -24,14 +24,14 @@ public class EncodeDecode271 {
 		while (i < s.length()) {
 			// Extract the length part (up to the delimiter)
 			int delimiterIndex = s.indexOf('#', i);
-			int length = Integer.parseInt(s.substring(i, delimiterIndex));
+			int wordlength = Integer.parseInt(s.substring(i, delimiterIndex));
 
 			// Extract the string of the given length
-			String str = s.substring(delimiterIndex + 1, delimiterIndex + 1 + length);
+			String str = s.substring(delimiterIndex + 1, delimiterIndex + 1 + wordlength);
 			decoded.add(str);
 
 			// Move the pointer past the processed string
-			i = delimiterIndex + 1 + length;
+			i = delimiterIndex + 1 + wordlength;
 		}
 		return decoded;
 	}
